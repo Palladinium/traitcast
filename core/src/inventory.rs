@@ -4,7 +4,7 @@ This module defines helper types for using `traitcast` along with the
 */
 use crate::{CastIntoTrait, ImplEntry, Registry};
 
-pub use inventory::submit;
+pub use inventory::*;
 
 /// Makes a trait registry by collecting EntryBuilders with the `inventory`
 /// crate.
