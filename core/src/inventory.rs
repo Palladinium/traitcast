@@ -94,6 +94,7 @@ macro_rules! traitcast {
     };
     ($source:ty => $target:ty) => {
         $crate::inventory::submit! {
+            #![crate = $crate]
             $crate::inventory::EntryBuilder::inserting_entry(
                 $crate::impl_entry!($target, $source))
         }
