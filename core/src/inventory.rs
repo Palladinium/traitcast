@@ -4,6 +4,8 @@ This module defines helper types for using `traitcast` along with the
 */
 use crate::{CastIntoTrait, ImplEntry, Registry};
 
+pub use inventory::submit;
+
 /// Makes a trait registry by collecting EntryBuilders with the `inventory`
 /// crate.
 pub fn build_registry() -> Registry {
@@ -91,7 +93,7 @@ macro_rules! traitcast {
         $crate::traitcast!($source => dyn $trait);
     };
     ($source:ty => $target:ty) => {
-        inventory::submit! {
+        $crate::inventory::submit! {
             $crate::inventory::EntryBuilder::inserting_entry(
                 $crate::impl_entry!($target, $source))
         }
